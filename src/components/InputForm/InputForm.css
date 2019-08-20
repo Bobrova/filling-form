@@ -1,0 +1,32 @@
+.inputContainer {
+  width: 48%;
+  min-height: 100%;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #d9dcdd;
+  box-shadow: 1px 1px 5px 1px #ccc;
+  box-sizing: border-box;
+}
+
+.item {
+  margin: 15px 30px 15px 15px;
+}
+
+.item-name {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.input-text {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #bdc0c1;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+}

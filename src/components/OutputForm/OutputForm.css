@@ -1,0 +1,58 @@
+.outputConteiner {
+  width: 48%;
+  min-height: 100%;
+  height: auto;
+  border: 1px solid #d9dcdd;
+  padding: 10px;
+  box-shadow: 1px 1px 5px 1px #ccc;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.output {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.output-additional-information {
+  min-height: 30px;
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.output-personal__item {
+  width: 47%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.output-text {
+  display: inline-block;
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 30px;
+  min-height: 30px;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.headline {
+  text-transform: uppercase;
+  font-size: 20px;
+  text-align: center;
+}
+
+.output-personal {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.output-contacts {
+  text-align: right;
+}
