@@ -30,11 +30,11 @@
 }
 
 .output-text {
-  display: inline-block;
+  display: block;
   width: 100%;
   word-wrap: break-word;
   line-height: 30px;
-  min-height: 30px;
+  min-height: 31px;
   border-bottom: 1px solid black;
   box-sizing: border-box;
   margin: 0;

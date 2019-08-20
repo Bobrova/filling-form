@@ -10,7 +10,7 @@ class InputForm extends Component {
     return (
       <div className="inputContainer">
         {Object.values(inputFieldList).map(field => (
-          <Input key={field.title} name={field.title} setValue={setValue} />
+          <Input key={field.title} name={field.title} setValue={setValue} error={field.error}/>
         ))}
       </div>
     );

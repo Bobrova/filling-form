@@ -52,3 +52,9 @@
   outline: none;
   border: 1px solid #3776b2;
 }
+
+.error {
+  height: 1vh;
+  padding: 0;
+  margin: 0;
+}

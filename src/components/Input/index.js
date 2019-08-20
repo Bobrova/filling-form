@@ -13,19 +13,21 @@ class InputForm extends Component {
   }
 
   render() {
-    const { name } = this.props;
-    let isTextarea = false;
-    if (name === 'AdditionalInformation') isTextarea = true;
+    const { name, error } = this.props;
+    let placeholder = '';
+    if (name === 'phone') placeholder = "+7(___)___-__-__";
+    if (name === 'dateOfBirth') placeholder = "ДД.ММ.ГГГГ"; 
     return (
       <React.Fragment>
-        {isTextarea
+        {name === 'AdditionalInformation'
           ? <div className="item">
             <label htmlFor={name} className="item-name">{fieldNames[name]}</label>
             <textarea className="textarea-text" name={name} id={name} onChange={this.handleInputChange} />
           </div>
           : <div className="item">
             <label htmlFor={name} className="item-name">{fieldNames[name]}</label>
-            <input type="text" className="input-text" id={name} name={name} onChange={this.handleInputChange} />
+            <input type="text" className="input-text" id={name} name={name} onChange={this.handleInputChange} placeholder={placeholder} />
+            <p className="error">{error}</p>
           </div>
         }
       </React.Fragment>
