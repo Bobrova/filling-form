@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './OutputForm.css';
+import './style.css';
 
-const OutputForm = (props) => {
-  const {
-    inputFieldList,
-  } = props;
+const OutputForm = props => {
+  const { inputFieldList } = props;
   return (
     <div className="outputConteiner">
       <h2 className="headline">Заявка на что-то</h2>
@@ -24,7 +22,9 @@ const OutputForm = (props) => {
         </div>
         <div className="output-additional-information">
           <p className="addInformation">Дополнительная информация:</p>
-          <p className="output-text">{inputFieldList.AdditionalInformation.text}</p>
+          <p className="output-text">
+            {inputFieldList.AdditionalInformation.text}
+          </p>
         </div>
       </div>
     </div>

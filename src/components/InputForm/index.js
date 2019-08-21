@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
-import './InputForm.css';
+import './style.css';
 
 class InputForm extends Component {
   render() {
@@ -10,7 +10,13 @@ class InputForm extends Component {
     return (
       <div className="inputContainer">
         {Object.values(inputFieldList).map(field => (
-          <Input key={field.title} name={field.title} setValue={setValue} error={field.error}/>
+          <Input
+            key={field.title}
+            name={field.title}
+            setValue={setValue}
+            error={field.error}
+            value={field.text}
+          />
         ))}
       </div>
     );
