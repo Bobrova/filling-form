@@ -2,6 +2,7 @@
   "name": "filling-form",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Bobrova.github.io/filling-form/",
   "dependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
@@ -39,6 +40,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
+    "gh-pages": "^2.0.1",
     "redux-devtools": "^3.5.0",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0"
