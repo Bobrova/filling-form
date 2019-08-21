@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as fieldNames from '../../constants/fieldNames';
-import maskDate from '../../utils/maskDate.js';
+import maskDate from '../../utils/maskDate';
 import './style.css';
 
 class Input extends Component {
@@ -9,28 +9,25 @@ class Input extends Component {
     const { setValue, fullDate } = this.props;
     const { value, name } = e.target;
     let date = value;
-    let isfullDate = (date.length >= 10 ) ? true : false;
+    const newfullDate = (date.length >= 10) || false;
     if (name === 'dateOfBirth') {
-      if ((fullDate && !isfullDate) && (!isfullDate && fullDate)) {
-        date = maskDate('');
-      }
-      else {
-        date = maskDate(value);
-      } 
+      date = fullDate && !newfullDate && (!newfullDate && fullDate)
+        ? maskDate('')
+        : maskDate(value);
     }
-    setValue({ title: name, text: date, isfullDate: isfullDate});
+    setValue({ title: name, text: date, isfullDate: newfullDate });
   }
 
   render() {
     const { name, error, value } = this.props;
     let placeholder = '';
-    if (name === 'phone') placeholder = "+7(___)___-__-__";
-    if (name === 'dateOfBirth') placeholder = "дд.мм.гггг"; 
+    if (name === 'phone') placeholder = '+7(___)___-__-__';
+    if (name === 'dateOfBirth') placeholder = 'дд.мм.гггг';
     return (
       <React.Fragment>
-        {name === "AdditionalInformation" ? (
-          <div className="item">
-            <label htmlFor={name} className="item-name">
+        {name === 'AdditionalInformation' ? (
+          <div className="field">
+            <label htmlFor={name} className="field-name">
               {fieldNames[name]}
             </label>
             <textarea
@@ -42,8 +39,8 @@ class Input extends Component {
             />
           </div>
         ) : (
-          <div className="item">
-            <label htmlFor={name} className="item-name">
+          <div className="field">
+            <label htmlFor={name} className="field-name">
               {fieldNames[name]}
             </label>
             <input
@@ -68,6 +65,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
+  fullDate: PropTypes.bool.isRequired,
 };
 
 export default Input;

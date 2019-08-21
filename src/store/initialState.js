@@ -1,52 +1,48 @@
-
-
-const getFromStorage = (field) => {
+const getFromStorage = () => {
   const data = localStorage.getItem('filling-form-3F');
-  if (data){
+  if (data) {
     return JSON.parse(data);
   }
-  else {
-    return false
-  }
-}
+  return false;
+};
 
 export const initialState = getFromStorage() || {
   fields: {
     name: {
       title: 'name',
-      text:  '',
+      text: '',
       error: '',
     },
     surname: {
       title: 'surname',
-      text:  '',
+      text: '',
       error: '',
     },
     address: {
       title: 'address',
-      text:  '',
+      text: '',
       error: '',
     },
     dateOfBirth: {
       title: 'dateOfBirth',
-      text:  '',
+      text: '',
       error: '',
     },
     email: {
       title: 'email',
-      text:  '',
+      text: '',
       error: '',
     },
     phone: {
       title: 'phone',
-      text:  '',
+      text: '',
       error: '',
     },
     AdditionalInformation: {
       title: 'AdditionalInformation',
-      text:  '',
+      text: '',
       error: '',
     },
   },
-  fullDate: false
+  fullDate: false,
 };

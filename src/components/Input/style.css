@@ -8,11 +8,11 @@
   box-sizing: border-box;
 }
 
-.item {
-  margin: 15px 40px 15px 15px;
+.field {
+  margin: 15px 40px 5px 15px;
 }
 
-.item-name {
+.field-name {
   display: block;
   margin-bottom: 10px;
   font-size: 20px;
@@ -29,11 +29,6 @@
 .input-text:focus {
   outline: none;
   border: 1px solid #3776b2;
-}
-
-.input-group {
-  display: flex;
-  justify-content: space-between;
 }
 
 .textarea-text {

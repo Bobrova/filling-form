@@ -5,7 +5,7 @@ import InputForm from '../components/InputForm';
 
 const mapStateToProps = state => ({
   inputFieldList: state.fields,
-  fiel: state,
+  fullDate: state.fullDate,
 });
 
 const mapDispatchToProps = dispatch => ({
