@@ -1,38 +1,50 @@
-export const initialState = {
+
+
+const getFromStorage = (field) => {
+  const data = localStorage.getItem('filling-form-3F');
+  if (data){
+    return JSON.parse(data);
+  }
+  else {
+    return false
+  }
+}
+
+export const initialState = getFromStorage() || {
   fields: {
     name: {
       title: 'name',
-      text: 'Настя',
+      text:  '',
       error: '',
     },
     surname: {
       title: 'surname',
-      text: 'Боброва',
+      text:  '',
       error: '',
     },
     address: {
       title: 'address',
-      text: 'Проезд зеленый д.43, к.15, кв.43',
+      text:  '',
       error: '',
     },
     dateOfBirth: {
       title: 'dateOfBirth',
-      text: '27.09.1992',
+      text:  '',
       error: '',
     },
     email: {
       title: 'email',
-      text: 'nastyabobr@yandex.ru',
+      text:  '',
       error: '',
     },
     phone: {
       title: 'phone',
-      text: '+79806307631',
+      text:  '',
       error: '',
     },
     AdditionalInformation: {
       title: 'AdditionalInformation',
-      text: 'Информация',
+      text:  '',
       error: '',
     },
   },

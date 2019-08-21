@@ -1,5 +1,5 @@
 import { SET_VALUE } from '../constants/ActionTypes';
-import { initialState } from './initialState';
+import { initialState } from '../store/initialState';
 import { validateValue } from '../utils'
 
 export default function todos(state = initialState, action) {

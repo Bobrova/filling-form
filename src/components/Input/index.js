@@ -25,7 +25,7 @@ class Input extends Component {
     const { name, error, value } = this.props;
     let placeholder = '';
     if (name === 'phone') placeholder = "+7(___)___-__-__";
-    if (name === 'dateOfBirth') placeholder = "ДД.ММ.ГГГГ"; 
+    if (name === 'dateOfBirth') placeholder = "дд.мм.гггг"; 
     return (
       <React.Fragment>
         {name === "AdditionalInformation" ? (
