@@ -6,7 +6,9 @@ import './style.css';
 class InputForm extends Component {
   render() {
     const { setValue } = this.props.actions;
-    const { inputFieldList } = this.props;
+    const { inputFieldList, fiel } = this.props;
+    console.log(fiel);
+    // console.log('InputForm', fullDate);
     return (
       <div className="inputContainer">
         {Object.values(inputFieldList).map(field => (
@@ -16,6 +18,7 @@ class InputForm extends Component {
             setValue={setValue}
             error={field.error}
             value={field.text}
+            fullDate={fiel.fullDate}
           />
         ))}
       </div>

@@ -54,7 +54,7 @@
 }
 
 .error {
-  height: 1vh;
+  min-height: 1vh;
   padding: 0;
   margin: 0;
 }

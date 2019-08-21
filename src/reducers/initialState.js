@@ -35,5 +35,6 @@ export const initialState = {
       text: 'Информация',
       error: '',
     },
-  }
+  },
+  fullDate: false
 };

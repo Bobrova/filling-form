@@ -11,6 +11,7 @@ export default function todos(state = initialState, action) {
           ...state.fields,
           [action.payload.title]: { ...state.fields[action.payload.title], text: action.payload.text, error: validateValue(action.payload.text, action.payload.title) },
         },
+        fullDate: action.payload.isfullDate,
       };
     default:
       return state;

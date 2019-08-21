@@ -4,13 +4,21 @@ import * as fieldNames from '../../constants/fieldNames';
 import maskDate from '../../utils/maskDate.js';
 import './style.css';
 
-class InputForm extends Component {
+class Input extends Component {
   handleInputChange = (e) => {
-    const { setValue } = this.props;
+    const { setValue, fullDate } = this.props;
     const { value, name } = e.target;
-    let v = value;
-    if (name === 'dateOfBirth') v = maskDate(value);
-    setValue({ title: name, text: v });
+    let date = value;
+    let isfullDate = (date.length >= 10 ) ? true : false;
+    if (name === 'dateOfBirth') {
+      if ((fullDate && !isfullDate) && (!isfullDate && fullDate)) {
+        date = maskDate('');
+      }
+      else {
+        date = maskDate(value);
+      } 
+    }
+    setValue({ title: name, text: date, isfullDate: isfullDate});
   }
 
   render() {
@@ -55,11 +63,11 @@ class InputForm extends Component {
   }
 }
 
-InputForm.propTypes = {
+Input.propTypes = {
   setValue: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
 
-export default InputForm;
+export default Input;

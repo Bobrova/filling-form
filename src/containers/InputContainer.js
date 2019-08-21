@@ -5,6 +5,7 @@ import InputForm from '../components/InputForm';
 
 const mapStateToProps = state => ({
   inputFieldList: state.fields,
+  fiel: state,
 });
 
 const mapDispatchToProps = dispatch => ({
