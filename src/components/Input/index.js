@@ -11,6 +11,7 @@ class Input extends Component {
     let date = value;
     if (name === 'dateOfBirth') {
       date = maskDate(value);
+      if (date === 'withoutChanges') return;
     }
     setValue({ title: name, text: date });
   }
