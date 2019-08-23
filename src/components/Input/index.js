@@ -6,16 +6,13 @@ import './style.css';
 
 class Input extends Component {
   handleInputChange = (e) => {
-    const { setValue, fullDate } = this.props;
+    const { setValue } = this.props;
     const { value, name } = e.target;
     let date = value;
-    const newfullDate = (date.length >= 10) || false;
     if (name === 'dateOfBirth') {
-      date = fullDate && !newfullDate && (!newfullDate && fullDate)
-        ? maskDate('')
-        : maskDate(value);
+        date = maskDate(value);
     }
-    setValue({ title: name, text: date, isfullDate: newfullDate });
+    setValue({ title: name, text: date });
   }
 
   render() {
@@ -65,7 +62,6 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   error: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  fullDate: PropTypes.bool.isRequired,
 };
 
 export default Input;

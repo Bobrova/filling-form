@@ -2,7 +2,7 @@ import { SET_VALUE } from '../constants/ActionTypes';
 import { initialState } from '../store/initialState';
 import { validateValue } from '../utils';
 
-export default function todos(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case SET_VALUE:
       return {
@@ -15,7 +15,6 @@ export default function todos(state = initialState, action) {
             error: validateValue(action.payload.text, action.payload.title),
           },
         },
-        fullDate: action.payload.isfullDate,
       };
     default:
       return state;

@@ -4,7 +4,7 @@ import Input from '../Input';
 import './style.css';
 
 const InputForm = (props) => {
-  const { inputFieldList, actions, fullDate } = props;
+  const { inputFieldList, actions } = props;
   const { setValue } = actions;
   return (
     <div className="inputContainer">
@@ -15,7 +15,6 @@ const InputForm = (props) => {
           setValue={setValue}
           error={field.error}
           value={field.text}
-          fullDate={fullDate}
         />
       ))}
     </div>
@@ -25,7 +24,6 @@ const InputForm = (props) => {
 InputForm.propTypes = {
   actions: PropTypes.object.isRequired,
   inputFieldList: PropTypes.object.isRequired,
-  fullDate: PropTypes.bool.isRequired,
 };
 
 export default InputForm;

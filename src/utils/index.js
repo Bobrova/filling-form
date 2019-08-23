@@ -1,7 +1,6 @@
 export const validateValue = (text, title) => {
   if (text !== '') {
-    switch (title) {
-      case 'name':
+    if (title === 'name' || title === 'surname') {
         if (/[A-Za-z]/.test(text)) {
           return 'Только русские буквы';
         }
@@ -13,19 +12,8 @@ export const validateValue = (text, title) => {
         }
         if (/^[А-Я]+[а-я]?/.test(text)) return '';
         return 'Некорректные данные, только русские буквы начинающиеся с заглавной.';
-      case 'surname':
-        if (/[A-Za-z]/.test(text)) {
-          return 'Только русские буквы';
-        }
-        if (/\d/.test(text)) {
-          return 'Поле не должно содержать цифры';
-        }
-        if (/^[а-я]{1}/.test(text)) {
-          return 'Должно начинаться с большой буквы';
-        }
-        if (/^[А-Я]+[а-я]?/.test(text)) return '';
-        return 'Некорректные данные, только русские буквы начинающиеся с заглавной.';
-      case 'dateOfBirth':
+    }
+    if (title === 'dateOfBirth') {
         if (
           /(0[1-9]|[12][0-9]|3[01])[- .](0[1-9]|1[012])[- .](19|20)\d\d/.test(
             text,
@@ -34,19 +22,18 @@ export const validateValue = (text, title) => {
           return '';
         }
         return 'Некоректная дата';
-      case 'phone':
-        if (/^\+7/.test(text) || /^8/.test(text)) {
-          if (/^\+7\d+$/.test(text) || /^8\d+$/.test(text)) {
-            if (/^\+7\d{8}/.test(text) || /^8\d{8}/.test(text)) {
-              return '';
-            }
-            return 'Некорректная длина';
+    }
+    if (title === 'phone') {
+      if (/^\+7/.test(text) || /^8/.test(text)) {
+        if (/^\+7\d+$/.test(text) || /^8\d+$/.test(text)) {
+          if (/^\+7\d{8}/.test(text) || /^8\d{8}/.test(text)) {
+            return '';
           }
-          return 'Должно содержать только цифры';
+          return 'Некорректная длина';
         }
-        return 'Некорректный ввод. Должно начинаться с +7 или 8 и содержать только цифры';
-      default:
-        return '';
+        return 'Должно содержать только цифры';
+      }
+    return 'Некорректный ввод. Должно начинаться с +7 или 8 и содержать только цифры';
     }
   }
 };

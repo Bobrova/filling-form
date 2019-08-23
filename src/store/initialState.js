@@ -44,5 +44,4 @@ export const initialState = getFromStorage() || {
       error: '',
     },
   },
-  fullDate: false,
 };
