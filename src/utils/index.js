@@ -35,5 +35,11 @@ export const validateValue = (text, title) => {
       }
     return 'Некорректный ввод. Должно начинаться с +7 или 8 и содержать только цифры';
     }
+    if (title === 'email') {
+      if (/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(text)) {
+            return '';
+          }
+      return 'Введите корректный e-mail.';
+    }
   }
 };
