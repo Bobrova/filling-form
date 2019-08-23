@@ -21,12 +21,11 @@ class Input extends Component {
     if (name === 'phone') placeholder = '+7(___)___-__-__';
     if (name === 'dateOfBirth') placeholder = 'дд.мм.гггг';
     return (
-      <React.Fragment>
-        {name === 'AdditionalInformation' ? (
-          <div className="field">
-            <label htmlFor={name} className="field-name">
-              {fieldNames[name]}
-            </label>
+        <div className="field">
+          <label htmlFor={name} className="field-name">
+            {fieldNames[name]}
+          </label>
+          {name === 'AdditionalInformation' ? (
             <textarea
               className="textarea-text"
               name={name}
@@ -34,25 +33,21 @@ class Input extends Component {
               onChange={this.handleInputChange}
               value={value}
             />
-          </div>
-        ) : (
-          <div className="field">
-            <label htmlFor={name} className="field-name">
-              {fieldNames[name]}
-            </label>
-            <input
-              type="text"
-              className="input-text"
-              id={name}
-              name={name}
-              onChange={this.handleInputChange}
-              value={value}
-              placeholder={placeholder}
-            />
-            <p className="error">{error}</p>
-          </div>
-        )}
-      </React.Fragment>
+          ) : (
+          <React.Fragment>
+              <input
+                type="text"
+                className="input-text"
+                id={name}
+                name={name}
+                onChange={this.handleInputChange}
+                value={value}
+                placeholder={placeholder}
+              />
+              <p className="error">{error}</p>
+          </React.Fragment>
+          )}
+        </div>
     );
   }
 }
@@ -60,7 +55,7 @@ class Input extends Component {
 Input.propTypes = {
   setValue: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
   value: PropTypes.string.isRequired,
 };
 

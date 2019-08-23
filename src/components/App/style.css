@@ -10,12 +10,78 @@ body {
   overflow-y: scroll;
 }
 
+html {
+  font-size: 17px;
+}
+
+@media (max-width:1700px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:1600px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+
+@media (max-width:1400px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:1200px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width:800px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width:700px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width:600px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width:500px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width:400px) {
+  html {
+    font-size: 7px;
+  }
+}
+
 .page {
   display: flex;
   justify-content: space-around;
   width: 100%;
   min-width: 300px;
   min-height: 100%;
-  padding: 30px 40px;
+  padding: 2rem;
   box-sizing: border-box;
 }
