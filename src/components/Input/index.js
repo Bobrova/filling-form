@@ -10,7 +10,7 @@ class Input extends Component {
     const { value, name } = e.target;
     let date = value;
     if (name === 'dateOfBirth') {
-        date = maskDate(value);
+      date = maskDate(value);
     }
     setValue({ title: name, text: date });
   }
@@ -21,33 +21,33 @@ class Input extends Component {
     if (name === 'phone') placeholder = '+7(___)___-__-__';
     if (name === 'dateOfBirth') placeholder = 'дд.мм.гггг';
     return (
-        <div className="field">
-          <label htmlFor={name} className="field-name">
-            {fields[name].title}
-          </label>
-          {name === 'AdditionalInformation' ? (
-            <textarea
-              className="textarea-text"
-              name={name}
+      <div className="field">
+        <label htmlFor={name} className="field-name">
+          {fields[name].title}
+        </label>
+        {name === 'AdditionalInformation' ? (
+          <textarea
+            className="textarea-text"
+            name={name}
+            id={name}
+            onChange={this.handleInputChange}
+            value={value}
+          />
+        ) : (
+          <React.Fragment>
+            <input
+              type={fields[name].type}
+              className="input-text"
               id={name}
+              name={name}
               onChange={this.handleInputChange}
               value={value}
+              placeholder={placeholder}
             />
-          ) : (
-          <React.Fragment>
-              <input
-                type={fields[name].type}
-                className="input-text"
-                id={name}
-                name={name}
-                onChange={this.handleInputChange}
-                value={value}
-                placeholder={placeholder}
-              />
-              <p className="error">{error}</p>
+            <p className="error">{error}</p>
           </React.Fragment>
-          )}
-        </div>
+        )}
+      </div>
     );
   }
 }
@@ -55,7 +55,7 @@ class Input extends Component {
 Input.propTypes = {
   setValue: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  error: PropTypes.string,
+  error: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
 
