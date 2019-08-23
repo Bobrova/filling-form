@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as fieldNames from '../../constants/fieldNames';
+import { fields } from '../../constants/fields';
 import maskDate from '../../utils/maskDate';
 import './style.css';
 
@@ -23,7 +23,7 @@ class Input extends Component {
     return (
         <div className="field">
           <label htmlFor={name} className="field-name">
-            {fieldNames[name]}
+            {fields[name].title}
           </label>
           {name === 'AdditionalInformation' ? (
             <textarea
@@ -36,7 +36,7 @@ class Input extends Component {
           ) : (
           <React.Fragment>
               <input
-                type="text"
+                type={fields[name].type}
                 className="input-text"
                 id={name}
                 name={name}
