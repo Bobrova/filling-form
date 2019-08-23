@@ -55,7 +55,7 @@ class Input extends Component {
 Input.propTypes = {
   setValue: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
   value: PropTypes.string.isRequired,
 };
 
