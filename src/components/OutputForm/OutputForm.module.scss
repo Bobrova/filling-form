@@ -15,7 +15,7 @@
   box-sizing: border-box;
 }
 
-.output-additional-information {
+.outputAdditionalInformation {
   min-height: 1.2rem;
   width: 100%;
   margin-top: 1rem;
@@ -24,13 +24,13 @@
   box-sizing: border-box;
 }
 
-.output-personal__item {
+.outputPersonal__item {
   width: 47%;
   padding: 1rem;
   box-sizing: border-box;
 }
 
-.output-text {
+.outputText {
   display: block;
   width: 100%;
   word-wrap: break-word;
@@ -49,12 +49,12 @@
   text-align: center;
 }
 
-.output-personal {
+.outputPersonal {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.output-contacts {
+.outputContacts {
   text-align: right;
 }

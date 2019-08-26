@@ -1,11 +1,11 @@
 import React from 'react';
 import InputContainer from '../../containers/InputContainer';
 import OutputContainer from '../../containers/OutputContainer';
-import './style.scss';
+import styles from './App.module.scss';
 
 function App() {
   return (
-    <section className="page">
+    <section className={styles.page}>
       <InputContainer />
       <OutputContainer />
     </section>

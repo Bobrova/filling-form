@@ -12,13 +12,13 @@
   margin: 0.7rem 3rem 0.7rem 1rem;
 }
 
-.field-name {
+.fieldName {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
-.input-text {
+.inputText {
   width: 100%;
   padding: 0.2rem;
   border: 0.08rem solid #bdc0c1;
@@ -27,12 +27,12 @@
   box-sizing: border-box;
 }
 
-.input-text:focus {
+.inputText:focus {
   outline: none;
   border: 0.08rem solid #3776b2;
 }
 
-.textarea-text {
+.textareaText {
   width: 100%;
   height: 6rem;
   resize: none;
@@ -45,7 +45,7 @@
   box-sizing: border-box;
 }
 
-.textarea-text:focus {
+.textareaText:focus {
   outline: none;
   border: 0.08rem solid #3776b2;
 }

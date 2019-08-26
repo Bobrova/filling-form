@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fields } from '../../constants/fields';
 import maskDate from '../../utils/maskDate';
-import './style.scss';
+import styles from './Input.module.scss';
 
 class Input extends Component {
   handleInputChange = (e) => {
@@ -23,12 +23,12 @@ class Input extends Component {
     if (name === 'dateOfBirth') placeholder = 'дд.мм.гггг';
     return (
       <div className="field">
-        <label htmlFor={name} className="field-name">
+        <label htmlFor={name} className={styles.fieldName}>
           {fields[name].title}
         </label>
         {name === 'AdditionalInformation' ? (
           <textarea
-            className="textarea-text"
+            className={styles.textareaText}
             name={name}
             id={name}
             onChange={this.handleInputChange}
@@ -38,14 +38,14 @@ class Input extends Component {
           <React.Fragment>
             <input
               type={fields[name].type}
-              className="input-text"
+              className={styles.inputText}
               id={name}
               name={name}
               onChange={this.handleInputChange}
               value={value}
               placeholder={placeholder}
             />
-            <p className="error">{error}</p>
+            <p className={styles.error}>{error}</p>
           </React.Fragment>
         )}
       </div>

@@ -1,28 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style.scss';
+import styles from './OutputForm.module.scss';
 
 const OutputForm = props => {
   const { inputFieldList } = props;
   return (
-    <div className="outputConteiner">
-      <h2 className="headline">Заявка на что-то</h2>
-      <div className="output">
-        <div className="output-personal">
-          <div className="output-personal__item output-person">
-            <p className="output-text">{inputFieldList.name.text}</p>
-            <p className="output-text">{inputFieldList.surname.text}</p>
-            <p className="output-text">{inputFieldList.dateOfBirth.text}</p>
+    <div className={styles.outputConteiner}>
+      <h2 className={styles.headline}>Заявка на что-то</h2>
+      <div className={styles.output}>
+        <div className={styles.outputPersonal}>
+          <div className={styles.outputPersonal__item}>
+            <p className={styles.outputText}>{inputFieldList.name.text}</p>
+            <p className={styles.outputText}>{inputFieldList.surname.text}</p>
+            <p className={styles.outputText}>{inputFieldList.dateOfBirth.text}</p>
           </div>
-          <div className="output-personal__item output-contacts">
-            <p className="output-text">{inputFieldList.phone.text}</p>
-            <p className="output-text">{inputFieldList.email.text}</p>
-            <p className="output-text">{inputFieldList.address.text}</p>
+          <div className={`${styles.outputPersonal__item} ${styles.outputContacts}`}>
+            <p className={styles.outputText}>{inputFieldList.phone.text}</p>
+            <p className={styles.outputText}>{inputFieldList.email.text}</p>
+            <p className={styles.outputText}>{inputFieldList.address.text}</p>
           </div>
         </div>
-        <div className="output-additional-information">
-          <p className="addInformation">Дополнительная информация:</p>
-          <p className="output-text">
+        <div className={styles.outputAdditionalInformation}>
+          <p className={styles.addInformation}>Дополнительная информация:</p>
+          <p className={styles.outputText}>
             {inputFieldList.AdditionalInformation.text}
           </p>
         </div>

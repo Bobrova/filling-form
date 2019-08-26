@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
-import './style.scss';
+import styles from './InputForm.module.scss';
 
 const InputForm = (props) => {
   const { inputFieldList, actions } = props;
   const { setValue } = actions;
   return (
-    <div className="inputContainer">
+    <div className={styles.inputContainer}>
       {Object.values(inputFieldList).map(field => (
         <Input
           key={field.title}
