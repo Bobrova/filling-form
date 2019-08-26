@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fields } from '../../constants/fields';
 import maskDate from '../../utils/maskDate';
-import './style.css';
+import './style.scss';
 
 class Input extends Component {
   handleInputChange = (e) => {

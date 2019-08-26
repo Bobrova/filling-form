@@ -1,7 +1,7 @@
 import React from 'react';
 import InputContainer from '../../containers/InputContainer';
 import OutputContainer from '../../containers/OutputContainer';
-import './style.css';
+import './style.scss';
 
 function App() {
   return (
