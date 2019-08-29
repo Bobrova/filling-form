@@ -25,7 +25,7 @@ export const validateValue = (text, title) => {
     }
     if (title === 'phone') {
       if (/^\+7/.test(text) || /^8/.test(text)) {
-        if (/^[+]??\d[\d(\\) -]{4,13}\d$/.test(text)) {
+        if (/^[+]??\d[\d(\\) -]{9,13}\d$/.test(text)) {
           return '';
         }
         return 'Некорректный ввод';

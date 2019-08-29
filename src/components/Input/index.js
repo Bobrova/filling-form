@@ -22,7 +22,7 @@ class Input extends Component {
     if (name === 'phone') placeholder = '+7(___)___-__-__';
     if (name === 'dateOfBirth') placeholder = 'дд.мм.гггг';
     return (
-      <div className="field">
+      <div className={styles.field}>
         <label htmlFor={name} className={styles.fieldName}>
           {fields[name].title}
         </label>
